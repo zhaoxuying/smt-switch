@@ -28,6 +28,10 @@ namespace smt {
 SmtSolver BitwuzlaSolverFactory::create(bool logging)
 {
   SmtSolver solver = std::make_shared<BzlaSolver>();
+
+  solver->set_opt("sat-solver", "cms");  // 关键配置
+  solver->set_opt("nthreads", "16");  // 关键配置
+
   if (logging)
   {
     solver = std::make_shared<LoggingSolver>(solver);

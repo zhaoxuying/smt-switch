@@ -12,7 +12,7 @@ if [ ! -d "$DEPS/bitwuzla" ]; then
     git clone https://github.com/bitwuzla/bitwuzla.git
     cd bitwuzla
     #git checkout -f $BITWUZLA_VERSION
-    ./configure.py --prefix $DEPS/install
+    ./configure.py --prefix $DEPS/install --cryptominisat
     cd build
     meson compile
     meson install
